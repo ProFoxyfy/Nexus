@@ -11,7 +11,10 @@
         For i = 0 To ListBox2.Items.Count - 1
             Dim str As String = ListBox2.Items.Item(i)
             Dim arr() As String = Split(str)
-            If arr(0) = "Nexus.SendMessageBox" Then
+            If arr(0) = "'" Then
+                frmDebugger.SendDebugMessage("Script reached a comment")
+            End If
+            If arr(0) = "Nexus.SendMessageBox(" Then
                 MsgBox(arr(1),, arr(2))
             End If
             If arr(0) = "Nexus.Debugging.SendDebugMsg(" Then
@@ -52,13 +55,18 @@
                     ExitCode = -1
                 End Try
             End If
-            If arr(0) = "#TYPE = INSTALLER" Then
-                frmDebugger.SendDebugMessage("Script is running as an Installer.")
-            End If
             If arr(0) = "Nexus.Installers.ZipFiles.ExtractFile(" Then
                 frmDownloadFile.Filename = arr(1)
                 frmDownloadFile.TargetLocation = arr(2)
                 frmDownloadFile.ShowDialog()
+            End If
+            If arr(0) = "Nexus.UI.SplashScreens.ShowSplashEX(" Then
+                frmSplashEX.Label1.Text = arr(1)
+                frmSplashEX.Label2.Text = arr(2)
+                'frmSplashEX.Label1.ForeColor = Color.FromArgb(Convert.ToInt32(arr(3)), Convert.ToInt32(arr(4)), Convert.ToInt32(arr(5)), Convert.ToInt32(arr(6)))
+                'frmSplashEX.Label2.ForeColor = Color.FromArgb(Convert.ToInt32(arr(3)), Convert.ToInt32(arr(4)), Convert.ToInt32(arr(5)), Convert.ToInt32(arr(6)))
+                frmSplashEX.BackgroundImage = Image.FromFile(arr(3))
+                frmSplashEX.ShowDialog()
             End If
         Next
     End Function
@@ -74,5 +82,9 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         frmTutorial.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        frmVisual_Script.ShowDialog()
     End Sub
 End Class

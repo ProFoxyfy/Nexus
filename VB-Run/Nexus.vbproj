@@ -54,6 +54,9 @@
     <Reference Include="CButtonLib">
       <HintPath>..\..\..\..\Desktop\Xp\CButtonLib.dll</HintPath>
     </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\Desktop\cn_krypton_toolkit\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="SQLABC_ModernUI">
       <HintPath>..\..\..\..\Desktop\SQLABC_ModernUI.dll</HintPath>
     </Reference>
@@ -89,6 +92,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddAction.Designer.vb">
+      <DependentUpon>frmAddAction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddAction.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDebugger.Designer.vb">
       <DependentUpon>frmDebugger.vb</DependentUpon>
     </Compile>
@@ -107,10 +116,22 @@
     <Compile Include="frmLoadScript.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmParameters.Designer.vb">
+      <DependentUpon>frmParameters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSplash.Designer.vb">
       <DependentUpon>frmSplash.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplashEX.Designer.vb">
+      <DependentUpon>frmSplashEX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplashEX.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTextEditor.Designer.vb">
@@ -123,6 +144,12 @@
       <DependentUpon>frmTutorial.vb</DependentUpon>
     </Compile>
     <Compile Include="frmTutorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualScript.Designer.vb">
+      <DependentUpon>frmVisualScript.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualScript.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -143,6 +170,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddAction.resx">
+      <DependentUpon>frmAddAction.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDebugger.resx">
       <DependentUpon>frmDebugger.vb</DependentUpon>
     </EmbeddedResource>
@@ -152,14 +182,23 @@
     <EmbeddedResource Include="frmLoadScript.resx">
       <DependentUpon>frmLoadScript.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmParameters.resx">
+      <DependentUpon>frmParameters.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSplash.resx">
       <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashEX.resx">
+      <DependentUpon>frmSplashEX.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTextEditor.resx">
       <DependentUpon>frmTextEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTutorial.resx">
       <DependentUpon>frmTutorial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualScript.resx">
+      <DependentUpon>frmVisualScript.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
